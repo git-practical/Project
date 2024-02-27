@@ -7,7 +7,7 @@ pipeline {
 			checkout scm			       
 		      }}
 		stage('Build') {
-	           steps {
+	           steps 
 			  sh '/home/bharti/Documents/dev/apache-maven-3.9.6/bin/mvn install'
 	                 }}
 		stage('Deployment'){
@@ -18,3 +18,5 @@ pipeline {
 			steps {
 		slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#slack-one', color: 'good', message: 'this is first slack operation', teamDomain: 'New Workspace', tokenCredentialId: 'slack-test'
 }}
+	}}
+		
