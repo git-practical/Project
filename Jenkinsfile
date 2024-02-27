@@ -1,6 +1,6 @@
 pipeline {
 	agent any 
-	
+
 	stages {
 	    stage('Checkout') {
 	        steps {
@@ -14,9 +14,9 @@ pipeline {
 		   steps {
 		sh 'cp target/Project.war /home/bharti/Documents/dev/apache-tomcat-9.0.86/webapps'
 			}}	
-		stage('slack notification') {
+		stage('slack notification'){
 			steps {
-		slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#slack-one', color: 'good', message: 'this is first slack operation', teamDomain: 'New Workspace', tokenCredentialId: 'slack-test'
+		sh 'https://hooks.slack.com/services/', channel: '#slack-one', color: 'good', message: 'this is first slack operation', teamDomain: 'New Workspace', tokenCredentialId: 'slack-test'
+                        }}
 }}
-	}}
 		
