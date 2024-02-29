@@ -17,7 +17,6 @@ pipeline {
 	stage('notify'){
 		steps {
 		slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#student-one', color: 'good', teamDomain: 'student', tokenCredentialId: 'name'
-		
                         }}
 }}
 		
