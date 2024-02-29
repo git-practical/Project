@@ -14,9 +14,10 @@ pipeline {
 		   steps {
 		sh 'cp target/Project.war /home/bharti/Documents/dev/apache-tomcat-9.0.86/webapps'
 			}}	
-		stage('slack notification'){
-			steps {
-		sh 'https://hooks.slack.com/services/', channel: '#slack-one', color: 'good', message: 'this is first slack operation', teamDomain: 'New Workspace', tokenCredentialId: 'slack-test'
+	stage('notify'){
+		steps {
+		slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#student-one', color: 'good', teamDomain: 'student', tokenCredentialId: 'name'
+		
                         }}
 }}
 		
